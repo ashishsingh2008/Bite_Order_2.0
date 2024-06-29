@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:8080/api/",
+  baseURL: "https://bite-order-2-0-1.onrender.com/api",
 });
 
 //auth
