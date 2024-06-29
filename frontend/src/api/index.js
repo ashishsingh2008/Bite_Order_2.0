@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://bite-order-2-0-1.onrender.com/api",
+  baseURL: "https://bite-order-2-0-1.onrender.com/api/",
 });
 
 //auth
