@@ -8,6 +8,8 @@ import FoodRoutes from "./routes/Food.js";
 dotenv.config();
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // for form data
 const corsOptions = {
   origin: [
     'http://localhost:3000', 
@@ -18,9 +20,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ extended: true })); // for form data
-
 app.use("/api/user/", UserRoutes);
 app.use("/api/food/", FoodRoutes);
 
