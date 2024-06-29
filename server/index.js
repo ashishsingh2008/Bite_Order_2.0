@@ -13,13 +13,14 @@ app.use(express.urlencoded({ extended: true })); // for form data
 const corsOptions = {
   origin: [
     'http://localhost:3000', 
-    'https://bite-order-2-0.vercel.app/'
+    'https://bite-order-2-0.vercel.app'
   ],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true
 };
 
 app.use(cors(corsOptions));
+
 app.use("/api/user/", UserRoutes);
 app.use("/api/food/", FoodRoutes);
 
