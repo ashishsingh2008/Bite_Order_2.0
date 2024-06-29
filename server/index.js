@@ -8,7 +8,16 @@ import FoodRoutes from "./routes/Food.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:3000', 
+    'https://bite-order-2-0.vercel.app/'
+  ],
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true })); // for form data
 
